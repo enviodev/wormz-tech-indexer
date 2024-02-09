@@ -1,0 +1,16 @@
+name: My Envio Indexer
+networks:
+- id: 1
+  start_block: 0
+  contracts:
+  - name: Wormz
+    address:
+    - 0x5c77BFFc54e33EE4AE303A168A4a0E45B238d09C
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 amount)
+    - event: ApprovalForAll(address indexed owner, address indexed operator, bool approved)
+    - event: ERC20Transfer(address indexed from, address indexed to, uint256 amount)
+    - event: ERC721Approval(address indexed owner, address indexed spender, uint256 indexed id)
+    - event: OwnershipTransferred(address indexed user, address indexed newOwner)
+    - event: Transfer(address indexed from, address indexed to, uint256 indexed id)

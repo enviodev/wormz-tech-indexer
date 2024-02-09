@@ -1,0 +1,62 @@
+type EventsSummary {
+  id: ID!
+  wormz_Approval: [Wormz_Approval!]! @derivedFrom(field: "eventsSummary")
+  wormz_ApprovalCount: BigInt!
+  wormz_ApprovalForAll: [Wormz_ApprovalForAll!]! @derivedFrom(field: "eventsSummary")
+  wormz_ApprovalForAllCount: BigInt!
+  wormz_ERC20Transfer: [Wormz_ERC20Transfer!]! @derivedFrom(field: "eventsSummary")
+  wormz_ERC20TransferCount: BigInt!
+  wormz_ERC721Approval: [Wormz_ERC721Approval!]! @derivedFrom(field: "eventsSummary")
+  wormz_ERC721ApprovalCount: BigInt!
+  wormz_OwnershipTransferred: [Wormz_OwnershipTransferred!]! @derivedFrom(field: "eventsSummary")
+  wormz_OwnershipTransferredCount: BigInt!
+  wormz_Transfer: [Wormz_Transfer!]! @derivedFrom(field: "eventsSummary")
+  wormz_TransferCount: BigInt!
+}
+
+type Wormz_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type Wormz_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  approved: Boolean!
+  eventsSummary: String!
+}
+
+type Wormz_ERC20Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type Wormz_ERC721Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  event_id: BigInt!
+  eventsSummary: String!
+}
+
+type Wormz_OwnershipTransferred {
+  id: ID!
+  user: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+
+type Wormz_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  event_id: BigInt!
+  eventsSummary: String!
+}
